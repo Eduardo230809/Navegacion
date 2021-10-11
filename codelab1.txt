@@ -1,0 +1,42 @@
+fun main() {
+    val numeros = listOf(0,3,8,4,0,5,5,8,9,2)
+    println("lista: ${numeros.sorted()}")
+    val elementos = numeros.toSet()
+    println("elementos: ${elementos.sorted()}")
+    
+    val noMutable = setOf(1,2,3)
+    
+    val mutable = mutableSetOf(3,2,1)
+    println("$noMutable==$mutable : ${noMutable==mutable}")
+
+    val edades = mutableMapOf<String,Int>(
+                  "eduardo" to 18,
+                  "lola" to 27
+    )
+    println( edades)
+    edades.put("Barbara", 42)
+    edades ["Joe"]=24
+    edades.put("eduardo", 19)
+     println( edades)
+     
+     edades.forEach { print("${it.key} is ${it.value}, ") }
+     val filtro = edades.filter{it.value<30}
+     println(filtro)
+     
+         val triple: (Int) -> Int = { it * 3 }
+    println(triple(3))
+    
+    println(edades.sortedWith { str1: String, str2: String -> str1.length - str2.length })
+     
+     val palabras = listOf("about", "acute", "awesome", "balloon", "best", "brief", "class", "coffee", "creative")
+    val filtradas = palabras.filter { it.startsWith("b", ignoreCase = true) }
+    filtradas.filter{it.key.length<5}
+        .shuffled()
+        .take(2)
+        .sorted()
+    println(filteredWords)
+
+
+     
+     
+}
